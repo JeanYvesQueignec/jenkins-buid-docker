@@ -12,7 +12,7 @@ node{
     stage('Test image') {
         docker.image('jy/nginx').withRun('-p 81:80') { c ->
         sh 'docker ps'
-        sh 'curl localhost'
+        sh 'curl localhost:81'
 	     }
     }
 }
