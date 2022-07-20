@@ -12,6 +12,7 @@ node{
     stage('Test image') {
         docker.image('jy/nginx').withRun('-p 80:80') { c ->
         sh 'docker ps'
+        sleep(time:30,unit:"SECONDS")
         sh 'curl localhost:80'
 	     }
     }
